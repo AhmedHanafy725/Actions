@@ -1,0 +1,21 @@
+name: Poetry
+
+on:
+  push:
+    branches: [ poetry ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - uses: dschep/install-poetry-action@v1.3
+      - name: Use poetry
+        run: |
+          apt-get update
+          apt-get install -y git
+          git clone https://github.com/threefoldtech/js-sdk.git
+          cd js-sdk && poetry run pip3 install pytest
