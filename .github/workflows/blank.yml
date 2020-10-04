@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - name: Gathering deps
+      - uses: actions/setup-python@v1
+      - uses: dschep/install-poetry-action@v1.3
+      - name: Use poetry
         run: |
           sudo apt-get update
-          sudo apt-get install -y git python3-pip python3-venv python3-setuptools
-          pip3 install launchpadlib poetry
           poetry run pip3 install pytest
