@@ -15,7 +15,7 @@ jobs:
       - uses: dschep/install-poetry-action@v1.3
       - name: Use poetry
         run: |
-          apt-get update
-          apt-get install -y git
+          sudo apt-get update
+          sudo apt-get install -y git
           git clone https://github.com/threefoldtech/js-sdk.git
           cd js-sdk && poetry run pip3 install pytest
