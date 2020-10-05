@@ -2,28 +2,14 @@ name: chrome_driver
 
 on:
   push:
-    branches: [ chrome_driver ]
+    branches: [ chrome_version ]
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - uses: dschep/install-poetry-action@v1.3
-      - name: Use poetry
+      - name: chrome version 
         run: |
-          sudo apt-get update
-          sudo apt-get install -y git unzip curl wget
-          git clone https://github.com/threefoldtech/js-sdk.git
-          cd js-sdk && poetry run pip3 install pytest
+          which chromedriver
           
-      - name: Install chrome
-        run: |
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
-          LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip && sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
