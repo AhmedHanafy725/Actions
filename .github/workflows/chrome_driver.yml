@@ -18,7 +18,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git unzip curl wget
           git clone https://github.com/threefoldtech/js-sdk.git
-          cd js-sdk && poetry run pip3 install pytest
+          cd js-sdk && poetry run pip3 install pytest selenium
           
       - name: Install chrome
         run: |
@@ -27,3 +27,9 @@ jobs:
           LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip && sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+          
+      - name: Run test
+        run: |
+          cp test.py js-sdk
+          cd js-sdk
+          poetry run pytest -s test.py
