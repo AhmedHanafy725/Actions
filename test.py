@@ -11,5 +11,5 @@ def test():
     self.driver = webdriver.Chrome(options=options)
     self.driver.implicitly_wait(10)
     self.driver.maximize_window()
-    self.driver.get("https://www.google.com/)
+    self.driver.get("https://www.google.com/")
     
