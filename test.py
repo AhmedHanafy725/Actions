@@ -8,8 +8,8 @@ def test():
     options.add_argument("--disable-gpu")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("ignore-certificate-errors")
-    self.driver = webdriver.Chrome(options=options)
-    self.driver.implicitly_wait(10)
-    self.driver.maximize_window()
-    self.driver.get("https://www.google.com/")
+    driver = webdriver.Chrome(options=options)
+    driver.implicitly_wait(10)
+    driver.maximize_window()
+    driver.get("https://www.google.com/")
     
