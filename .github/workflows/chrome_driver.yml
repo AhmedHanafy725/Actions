@@ -2,7 +2,7 @@ name: chrome_driver
 
 on:
   push:
-    branches: [ chrome_version ]
+    branches: [ chrome ]
 
 jobs:
   build:
