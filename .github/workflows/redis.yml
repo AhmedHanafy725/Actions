@@ -15,4 +15,5 @@ jobs:
           sudo apt-get install -y redis 
           sudo cat /etc/redis/redis.conf
           redis-server redis.conf
+          sleep 3
           ps aux
