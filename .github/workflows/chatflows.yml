@@ -2,8 +2,7 @@ name: Chatflows
 
 on:
   push:
-    branches:
-      - [chatflow]
+    branches: [ chatflow ]
 
 jobs:
   build:
