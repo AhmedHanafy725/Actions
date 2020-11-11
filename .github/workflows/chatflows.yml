@@ -32,4 +32,4 @@ jobs:
         run: |
           cd js-sdk
           sudo --preserve-env=TNAME --preserve-env=EMAIL --preserve-env=WORDS --preserve-env=WALLET_SECRET \
-          poetry run pytest -sv tests/sals/automated_chatflows --cov=jumpscale --cov-report=xml
+          poetry run pytest -sv tests/sals/automated_chatflows/test_solutions.py --cov=jumpscale --cov-report=xml
