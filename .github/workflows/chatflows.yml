@@ -15,7 +15,7 @@ jobs:
           sudo apt-get install -y git python3-pip python3-venv python3-setuptools tmux redis restic nginx cron wireguard
           sudo service redis stop
           sudo service nginx stop
-          git clone https://github.com/threefoldtech/js-sdk.git
+          git clone https://github.com/threefoldtech/js-sdk.git -b development_chatflows_tests
           cd js-sdk
           sudo pip3 install poetry
           sudo poetry run pip3 install pytest selenium pytest-cov
