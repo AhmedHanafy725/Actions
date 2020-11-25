@@ -1,8 +1,6 @@
 name: Chatflows
 
-on:
-  push:
-    branches: [ chatflow ]
+on: workflow_dispatch
 
 jobs:
   build:
