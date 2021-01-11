@@ -1,15 +1,15 @@
-name: chrome_driver
+name: netstat
 
 on:
   push:
-    branches: [ chrome ]
+    branches: [ netstat ]
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - name: chrome version 
+      - name: check netstat
         run: |
-          which chromedriver
+          netstat -tlnp
           
