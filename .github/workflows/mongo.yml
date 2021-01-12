@@ -12,5 +12,6 @@ jobs:
       - uses: supercharge/mongodb-github-action@1.3.0
       - name: Install mongodb
         run: |
-            which mongo
+            sudo which mongo
+            sudo service mongodb status
           
