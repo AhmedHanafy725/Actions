@@ -20,5 +20,7 @@ jobs:
       
       - name: check mongodb
         run: | 
+          sleep 3
+           sudo systemctl status mongod
           sudo netstat -tlnp 
           
