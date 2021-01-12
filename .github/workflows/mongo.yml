@@ -17,12 +17,11 @@ jobs:
           sudo apt-get install mongodb-org
       - name: Start MongoDB
         run: |
-          sudo systemctl enable mongod
           sudo systemctl start mongod
       
       - name: check mongodb
         run: | 
           sleep 3
           sudo systemctl status mongod
-          sudo netstat -tlnp 
+          sudo netstat -an
           
