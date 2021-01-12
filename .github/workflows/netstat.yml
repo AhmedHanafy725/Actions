@@ -1,15 +1,16 @@
-name: netstat
+name: mongo
 
 on:
   push:
-    branches: [ netstat ]
+    branches: [ mongo ]
 
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - name: check netstat
+      - name: Install mongodb
         run: |
-          netstat -tlnp
+          apt-get update
+          apt-get install -y mongodb
           
