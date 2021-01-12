@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@master
       - name: Install mongodb
         run: |
-          apt-get update
-          apt-get install -y mongodb
+          sudo apt-get update
+          sudo apt-get install -y mongodb
           
