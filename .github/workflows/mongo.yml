@@ -7,13 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    services:
-      mongodb:
-        image: mongo
-        ports:
-        - 27017:27017
     steps:
       - uses: actions/checkout@master
+      - name: Install MongoDB
+        run: |
+          curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+          sudo apt-get update
+          sudo apt-get install mongodb-org
+      - name: Start MongoDB
+        run: sudo systemctl start mongod
+      
       - name: check mongodb
         run: | 
           sudo netstat -tlnp 
