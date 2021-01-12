@@ -12,5 +12,6 @@ jobs:
       - uses: supercharge/mongodb-github-action@1.3.0
       - name: check mongodb
         run: |
-          netstat -tlnp
+          sudo netstat -tlnp
+          mongo
           
