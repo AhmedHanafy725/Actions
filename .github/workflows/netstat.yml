@@ -3,7 +3,6 @@ name: netstat
 on:
   schedule:
     - cron:  '0/5 * * * *'
-  workflow_dispatch: []
 
 jobs:
   build:
