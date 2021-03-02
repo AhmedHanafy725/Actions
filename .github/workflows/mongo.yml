@@ -1,27 +1,24 @@
-name: mongo
+name: continue-on-error
 
 on:
   push:
-    branches: [ mongo ]
+    branches: [ continue_on_error ]
 
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - name: Install MongoDB
+      - name: fail
+        continue-on-error: true
         run: |
-          curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
-          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-          sudo apt-get update
-          sudo apt-get install mongodb-org
-      - name: Start MongoDB
+          hamada
+      - name: success
         run: |
-          sudo systemctl start mongod
+          ls
       
-      - name: check mongodb
+      - name: check
+        if: success()
         run: | 
-          sleep 3
-          sudo systemctl status mongod
-          sudo netstat -an
+          echo "called"
           
