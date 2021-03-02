@@ -22,5 +22,5 @@ jobs:
       - name: check
         if: steps.tests.outcome != 'success'
         run: | 
-          exit 1
+          exit "Tests failed, Please Check tests step"
           
