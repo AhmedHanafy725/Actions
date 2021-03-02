@@ -20,7 +20,7 @@ jobs:
           ls
       
       - name: check
-        if: steps.tests.outcome == 'success'
+        if: steps.tests.outcome != 'success'
         run: | 
-          echo "called"
+          exit 1
           
