@@ -10,15 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: fail
+        id: tests
         continue-on-error: true
         run: |
           hamada
       - name: success
+        continue-on-error: true
         run: |
           ls
       
       - name: check
-        if: success()
+        if: steps.tests.outcome == 'success'
         run: | 
           echo "called"
           
