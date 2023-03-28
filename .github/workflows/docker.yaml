@@ -27,4 +27,4 @@ jobs:
       with:
         images: ghcr.io/${{ github.repository }}
         tags: |
-          type=semver,pattern={{version}
+          type=semver,pattern={{version}}
