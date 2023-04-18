@@ -12,7 +12,7 @@ jobs:
       - name: check netstat
         run: |
           VERSION=$GITHUB_REF 
-          echo VERSION=${VERSION:10:12} >> $GITHUB_ENV
-          echo ${VERSION:10:12}
+          echo VERSION=${VERSION:11} >> $GITHUB_ENV
+          echo ${VERSION:11:12}
           echo ${{env.VERSION}}
           
