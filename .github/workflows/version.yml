@@ -14,5 +14,5 @@ jobs:
           VERSION=$GITHUB_REF 
           echo VERSION=${VERSION:10:12} >> $GITHUB_ENV
           echo VERSION
-          echo ${{GITHUB_ENV.VERSION}}
+          echo ${{env.VERSION}}
           
